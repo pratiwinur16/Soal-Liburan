@@ -50,6 +50,7 @@ console.log(benderaInggris(9))
     '    *    ' // 9
 */
 
+
 console.log(benderaInggris(5))
 /*
     '  *  '
