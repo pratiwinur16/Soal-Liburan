@@ -10,10 +10,29 @@
     petunjuk : 
     - input harus bernilai ganjil , jika tidak ganjil maka " invalid input "
 */
-function benderaInggris(param)
-{
-    // your code here
+//x untuk sumbu x, y untuk sumbu y// 
 
+function benderaInggris(param) {
+  if (param % 2===0 ){
+    return 'invalid input'
+  }
+  var tampil = ""
+  for (var y = 0 ; y<param;y++){
+    var baris="";
+    if (y==Math.floor(param/2)){
+        baris = baris + "*************"
+    }else{
+      for (var x= 0 ; x < 3; x++){
+        if (x==1){
+          baris = baris + "*     "
+        } else {
+          baris = baris + "'     "
+        }
+      }
+    } 
+    tampil = tampil + baris + '\n';
+  }
+ return tampil 
 }
 
 console.log(benderaInggris(9))
