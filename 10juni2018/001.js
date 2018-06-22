@@ -5,7 +5,23 @@
 */
 function soal1(param)
 {
-    // your code here
+  if (param  === 0 ){
+    return 'invalid input'
+  }
+    var result = []
+    var exclamationMark = '!'
+    var ad = "@";
+    var hashtag = "#"
+     for (var i=0; i<=param; i++){
+       if (result.length===0){
+         result.push (exclamationMark)
+       } else if (result.length===1) {
+         result.push (ad) 
+       } else if (result.length===3 ){
+         result.push (hashtag)
+       }
+     }
+    return result 
 }
 
 console.log(soal1(3))
