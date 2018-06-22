@@ -7,7 +7,7 @@
     - Tidak boleh memakai rekursif 
 */
 
-
+*/ memakai rumus aritmatika progression : n * (min + max) /2 */
 
 function addAll(arr){
      var result=arr.length * (arr[0]+arr[arr.length-1])/2;
