@@ -1,6 +1,75 @@
 function spiralNumber(param)
 {
-    // your code here
+    var arr=[];
+    for(var y=0;y<param;y++){
+      var row=[];
+      for(var x=0;x<param;x++){
+        row.push("");
+      } 
+      arr.push(row);
+    }
+    var counter=1;
+    var x=0;var y=0;
+    var position="top";
+    while(counter<=param*param){
+        if(position=="top"){
+          if(x!==param){
+            if(arr[y][x]==""){
+              arr[y][x]=counter;
+              counter++;
+              x++;
+            }else{
+              position="right";y++;x--;
+            }
+          }else{
+            position="right";y++;x--;
+          }
+        }
+        else if(position=="right"){
+          if(y!==param){
+            if(arr[y][x]==""){
+              arr[y][x]=counter;
+              counter++;
+              y++;
+            }
+            else{
+              position="bottom";x--;y--;
+            }
+          }else{
+            position="bottom";x--;y--;
+          }
+        }
+        else if(position=="bottom"){
+          if(x!==-1){
+            if(arr[y][x]==""){
+              arr[y][x]=counter;
+              counter++;
+              x--;
+            }
+            else{
+              position="left";x++;y--;
+            }
+          }else{
+            position="left";x++;y--;
+          }
+        }
+        else if(position=="left"){
+          if(y!==-1){
+            if(arr[y][x]==""){
+              arr[y][x]=counter;
+              counter++;
+              y--;
+            }
+            else{
+              position="top";x++;y++;
+            }
+          }else{
+            position="top";x++;y++;
+          }
+        }
+        
+    }
+    return arr;
 }
 
 console.log(spiralNumber(3))
@@ -12,7 +81,7 @@ console.log(spiralNumber(3))
     ]
 */
 
-console.log(spiralNumber(4))
+console.log(spiralNumber(10))
 /*
     [
         [1,2,3,4],
